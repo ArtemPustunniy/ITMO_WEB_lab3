@@ -1,0 +1,154 @@
+@use '../variables' as *;
+
+.index-header-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: $spacing-lg $spacing-md;
+    position: relative;
+    margin-left: 100px;
+    margin-top: -$spacing-lg;
+}
+
+.index-header-icons {
+    position: absolute;
+    top: 30px;
+    right: 100px;
+    display: flex;
+    gap: 25px;
+}
+
+.index-logo-centered {
+    margin-bottom: 30px;
+    
+    .logo-link {
+        display: inline-block;
+        text-decoration: none;
+        background-image: url('../../images/logo.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 320px;
+        height: 120px;
+        transition: opacity $transition-fast;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.index-nav-centered {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-xl;
+    
+    .nav-link {
+        text-decoration: none;
+        color: $text-color;
+        font-size: $font-size-large;
+        font-weight: normal;
+        letter-spacing: 2px;
+        transition: color $transition-fast;
+        
+        &:hover {
+            color: $primary-color;
+        }
+    }
+}
+
+.create-buy-section {
+    padding: $spacing-xxl 0;
+    background: $background-white;
+}
+
+.section-title {
+    text-align: center;
+    font-size: $font-size-huge;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: $spacing-xl;
+    letter-spacing: 2px;
+}
+
+.create-buy-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: start;
+}
+
+.subsection-title {
+    font-size: $font-size-xl;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: $spacing-md;
+    letter-spacing: 1px;
+}
+
+.store-image, .workshop-image {
+    width: 100%;
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-bottom: $spacing-md;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.store-image {
+    background-image: url('../../images/store.jpg');
+}
+
+.workshop-image {
+    background-image: url('../../images/workshop-hands.jpg');
+}
+
+.section-text {
+    font-size: $font-size-base;
+    line-height: 1.8;
+    color: $text-light;
+}
+
+.contact-section {
+    padding: $spacing-xxl 0;
+    background: $background-light;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: start;
+}
+
+.contact-image {
+    width: 100%;
+    height: 400px;
+    background-image: url('../../images/terracotta.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-form {
+    position: relative;
+}
+
+.form-icon {
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 60px;
+    height: 60px;
+    background-image: url('../../images/vase.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+

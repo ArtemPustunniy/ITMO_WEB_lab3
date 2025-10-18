@@ -1,0 +1,20 @@
+@use '../variables' as *;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    line-height: 1.6;
+    color: $text-color;
+    overflow-x: hidden;
+}
+
+html, body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+}

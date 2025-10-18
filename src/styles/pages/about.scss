@@ -1,0 +1,150 @@
+@use '../variables' as *;
+
+.about-header-centered {
+    background: $background-white;
+    padding: $spacing-lg 0;
+    text-align: center;
+    position: relative;
+}
+
+.about-header-icons {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 25px;
+}
+
+.about-logo-centered {
+    margin-bottom: 30px;
+    
+    .logo-link {
+        display: inline-block;
+        text-decoration: none;
+        background-image: url('../../images/logo.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 260px;
+        height: 100px;
+        transition: opacity $transition-fast;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.about-nav-centered {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    
+    .nav-link {
+        text-decoration: none;
+        color: $text-color;
+        font-size: $font-size-small;
+        font-weight: normal;
+        letter-spacing: 1px;
+        transition: color $transition-fast;
+        
+        &:hover {
+            color: $primary-color;
+        }
+        
+        &.active {
+            color: $primary-color;
+            font-weight: bold;
+        }
+    }
+}
+
+.about-main-content {
+    background: $background-white;
+    padding: $spacing-xl 0;
+    
+    .about-page-title {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .about-story-section {
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+}
+
+.about-page-title {
+    text-align: center;
+    font-size: $font-size-huge;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: $spacing-xl;
+    letter-spacing: 2px;
+}
+
+.about-story-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+    align-items: start;
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+.about-story-image {
+    width: 100%;
+    height: 400px;
+    background-image: url('../../images/crafts.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+}
+
+.about-story-text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-height: 400px;
+    overflow: hidden;
+    
+    p {
+        font-size: $font-size-small;
+        line-height: 1.6;
+        color: $text-light;
+        margin: 0;
+    }
+}
+
+.find-us-section {
+    padding: $spacing-xxl 0;
+    background: $background-white;
+    
+    .section-title {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .map-placeholder {
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 400px;
+    background: $background-light;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $text-lighter;
+    font-size: $font-size-base;
+    margin-top: $spacing-lg;
+    
+    &::before {
+        content: "Карта будет здесь";
+    }
+}
+

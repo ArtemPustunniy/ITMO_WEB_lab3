@@ -1,0 +1,38 @@
+@use '../variables' as *;
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: $spacing-md;
+}
+
+h1 {
+    font-size: $font-size-huge;
+    letter-spacing: 2px;
+}
+
+h2 {
+    font-size: $font-size-xxl;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: $font-size-xl;
+}
+
+p {
+    margin-bottom: $spacing-md;
+    line-height: 1.8;
+    color: $text-light;
+}
+
+a {
+    color: $text-color;
+    text-decoration: none;
+    transition: color $transition-fast;
+    
+    &:hover {
+        color: $primary-color;
+    }
+}
+

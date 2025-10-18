@@ -1,0 +1,70 @@
+@use '../variables' as *;
+
+.btn {
+    display: inline-block;
+    padding: 15px 30px;
+    font-size: $font-size-base;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    transition: all $transition-fast;
+    letter-spacing: 1px;
+    
+    &:hover {
+        transform: translateY(-2px);
+    }
+}
+
+.btn-primary {
+    background: $background-white;
+    color: $text-color;
+    border: 2px solid $border-color;
+    
+    &:hover {
+        background: $primary-color;
+        color: $background-white;
+        border-color: $primary-color;
+    }
+}
+
+.btn-secondary {
+    background: $secondary-color;
+    color: $background-white;
+    border: 1px solid $secondary-color;
+    
+    &:hover {
+        background: $primary-color;
+        border-color: $primary-color;
+    }
+}
+
+.shop-now-btn {
+    @extend .btn;
+    @extend .btn-primary;
+    width: 100%;
+    max-width: 320px;
+}
+
+.submit-btn {
+    @extend .btn;
+    @extend .btn-secondary;
+}
+
+.newsletter-btn {
+    @extend .btn;
+    @extend .btn-secondary;
+    font-size: $font-size-small;
+    padding: 10px 20px;
+}
+
+.blog-read-btn {
+    @extend .btn;
+    @extend .btn-primary;
+    width: fit-content;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+

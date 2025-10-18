@@ -1,0 +1,166 @@
+@use '../variables' as *;
+
+.catalog-header-centered {
+    background: $background-white;
+    padding: $spacing-lg 0;
+    text-align: center;
+    position: relative;
+}
+
+.catalog-header-icons {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 25px;
+}
+
+.catalog-logo-centered {
+    margin-bottom: 30px;
+    
+    .logo-link {
+        display: inline-block;
+        text-decoration: none;
+        background-image: url('../../images/logo.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 260px;
+        height: 100px;
+        transition: opacity $transition-fast;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.catalog-nav-centered {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    
+    .nav-link {
+        text-decoration: none;
+        color: $text-color;
+        font-size: $font-size-small;
+        font-weight: normal;
+        letter-spacing: 1px;
+        transition: color $transition-fast;
+        
+        &:hover {
+            color: $primary-color;
+        }
+        
+        &.active {
+            color: $primary-color;
+            font-weight: bold;
+        }
+    }
+}
+
+.catalog-main-content {
+    background: $background-white;
+    padding: $spacing-xl 0;
+    
+    .catalog-page-title {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .catalog-filters {
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+    
+    .catalog-products-grid {
+        animation: fadeInUp 0.8s ease-out 0.4s forwards;
+        opacity: 0;
+    }
+}
+
+.catalog-page-title {
+    text-align: center;
+    font-size: $font-size-huge;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: $spacing-lg;
+    letter-spacing: 2px;
+}
+
+.catalog-filters {
+    display: flex;
+    gap: 0;
+    justify-content: center;
+    margin-bottom: $spacing-xl;
+    border: 1px solid $border-color;
+    border-radius: 0;
+    overflow: hidden;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: $spacing-xl;
+}
+
+.filter-btn {
+    background: $background-white;
+    border: none;
+    border-right: 1px solid $border-color;
+    padding: 15px 30px;
+    font-size: $font-size-small;
+    font-weight: normal;
+    color: $text-color;
+    cursor: pointer;
+    transition: all $transition-fast;
+    letter-spacing: 1px;
+    flex: 1;
+    
+    &:last-child {
+        border-right: none;
+    }
+    
+    &:hover {
+        background: $background-light;
+    }
+    
+    &.active {
+        background: $secondary-color;
+        color: $background-white;
+    }
+}
+
+.catalog-products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+.catalog-product-image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+
+.catalog-product-info {
+    padding: $spacing-md;
+}
+
+.catalog-product-name {
+    font-size: $font-size-large;
+    color: $text-color;
+    margin-bottom: 8px;
+    font-weight: normal;
+}
+
+.catalog-product-price {
+    font-size: $font-size-base;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: 0;
+}
+

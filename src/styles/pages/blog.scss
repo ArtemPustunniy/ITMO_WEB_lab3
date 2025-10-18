@@ -1,0 +1,135 @@
+@use '../variables' as *;
+
+.blog-header-centered {
+    background: $background-white;
+    padding: $spacing-lg 0;
+    text-align: center;
+    position: relative;
+}
+
+.blog-header-icons {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    display: flex;
+    gap: 25px;
+}
+
+.blog-logo-centered {
+    margin-bottom: 30px;
+    
+    .logo-link {
+        display: inline-block;
+        text-decoration: none;
+        background-image: url('../../images/logo.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 260px;
+        height: 100px;
+        transition: opacity $transition-fast;
+        
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+}
+
+.blog-nav-centered {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-lg;
+    
+    .nav-link {
+        text-decoration: none;
+        color: $text-color;
+        font-size: $font-size-small;
+        font-weight: normal;
+        letter-spacing: 1px;
+        transition: color $transition-fast;
+        
+        &:hover {
+            color: $primary-color;
+        }
+        
+        &.active {
+            color: $primary-color;
+            font-weight: bold;
+        }
+    }
+}
+
+.blog-main-content {
+    background: $background-light;
+    padding: $spacing-xl 0;
+    min-height: calc(100vh - 200px);
+    
+    .blog-page-title {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+    
+    .blog-posts-grid {
+        animation: fadeInUp 0.8s ease-out 0.2s forwards;
+        opacity: 0;
+    }
+}
+
+.blog-page-title {
+    text-align: center;
+    font-size: $font-size-huge;
+    font-weight: bold;
+    color: $text-color;
+    margin-bottom: $spacing-xl;
+    letter-spacing: 2px;
+}
+
+.blog-posts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 30px;
+    max-width: $container-max-width;
+    margin: 0 auto;
+}
+
+.blog-post-top {
+    display: flex;
+    height: 200px;
+}
+
+.blog-post-image {
+    flex: 0 0 50%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+
+.blog-post-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $spacing-md 40px;
+}
+
+.blog-post-title {
+    font-size: $font-size-xl;
+    font-weight: bold;
+    color: $text-color;
+    margin: 0;
+    letter-spacing: 1px;
+    flex: 1;
+}
+
+.blog-post-text {
+    padding: 0 40px 40px 40px;
+    
+    p {
+        font-size: $font-size-base;
+        line-height: 1.8;
+        color: $text-light;
+        text-align: justify;
+        margin: 0;
+    }
+}
+

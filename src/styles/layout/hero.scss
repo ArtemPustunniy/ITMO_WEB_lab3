@@ -1,0 +1,103 @@
+@use '../variables' as *;
+
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+}
+
+.hero-content {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.hero-image {
+    flex: 0 0 35%;
+    background-image: url('../../images/potter.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.hero-text {
+    flex: 0 0 70%;
+    background: $background-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: $spacing-lg;
+    position: relative;
+}
+
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.content-wrapper {
+    display: flex;
+    align-items: flex-end;
+    gap: $spacing-xl;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.text-section {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    align-items: flex-end;
+    padding-bottom: $spacing-md;
+}
+
+.promo-text h1 {
+    font-size: 26px;
+    font-weight: normal;
+    font-style: italic;
+    color: $text-color;
+    margin-bottom: 0;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    display: block;
+}
+
+.image-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    gap: $spacing-md;
+    width: clamp(240px, 25vw, 320px);
+    transform: translateX(-40px);
+    margin: 0 0 0 auto;
+    transition: all $transition-fast;
+    animation: slideInFromRight 1.2s ease-out forwards;
+}
+
+@keyframes slideInFromRight {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-40px);
+        opacity: 1;
+    }
+}
+
+.product-image {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    background-image: url('../../images/ceramic-vase.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    box-shadow: $shadow-medium;
+    transition: all $transition-fast;
+}
+

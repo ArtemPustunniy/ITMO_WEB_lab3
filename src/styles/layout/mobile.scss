@@ -1,0 +1,81 @@
+@use '../variables' as *;
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    z-index: 1001;
+    
+    span {
+        width: 25px;
+        height: 3px;
+        background: $text-color;
+        margin: 3px 0;
+        transition: $transition-fast;
+        display: block;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    
+    &.active {
+        display: flex;
+    }
+}
+
+.mobile-menu-content {
+    background: $background-white;
+    padding: $spacing-lg;
+    border-radius: 10px;
+    position: relative;
+    max-width: 300px;
+    width: 90%;
+}
+
+.mobile-menu-close {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: none;
+    border: none;
+    font-size: $font-size-xl;
+    cursor: pointer;
+    color: $text-color;
+}
+
+.mobile-nav {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-md;
+}
+
+.mobile-nav-link {
+    text-decoration: none;
+    color: $text-color;
+    font-size: $font-size-large;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color $transition-fast;
+    
+    &:hover {
+        color: $primary-color;
+    }
+}
+

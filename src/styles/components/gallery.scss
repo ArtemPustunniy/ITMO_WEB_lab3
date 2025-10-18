@@ -1,0 +1,84 @@
+@use '../variables' as *;
+
+.gallery-section {
+    padding: $spacing-xxl 0;
+    background: $background-white;
+}
+
+.gallery-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-bottom: 30px;
+}
+
+.gallery-images {
+    display: flex;
+    gap: $spacing-md;
+    overflow: hidden;
+    width: 800px;
+}
+
+.gallery-image {
+    flex: 0 0 250px;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    position: relative;
+    transition: transform $transition-fast;
+    
+    &.active {
+        transform: scale(1.1);
+    }
+    
+    &:nth-child(1) {
+        background-image: url('../../images/clay-bloom.jpg');
+    }
+    
+    &:nth-child(2) {
+        background-image: url('../../images/moss-moon.jpg');
+    }
+    
+    &:nth-child(3) {
+        background-image: url('../../images/earthen-grace.jpg');
+    }
+}
+
+.gallery-arrow {
+    background: $secondary-color;
+    color: $background-white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-size: $font-size-large;
+    cursor: pointer;
+    transition: all $transition-fast;
+    
+    &:hover {
+        background: $primary-color;
+    }
+}
+
+.gallery-indicators {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-sm;
+}
+
+.indicator {
+    width: 12px;
+    height: 12px;
+    background: $border-color;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all $transition-fast;
+    
+    &.active {
+        background: $primary-color;
+    }
+}
+
