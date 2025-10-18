@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ceramic Soul - О нас</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Заголовок как в каталоге и блоге -->
+    <header class="about-header-centered">
+        <div class="container">
+            <!-- Иконки в правом верхнем углу -->
+            <div class="about-header-icons">
+                <a href="#" class="icon-link">
+                    <img src="images/search.png" alt="Search" class="icon">
+                </a>
+                <a href="#" class="icon-link">
+                    <img src="images/bag.png" alt="Shopping Bag" class="icon">
+                </a>
+            </div>
+            
+            <div class="about-logo-centered">
+                <a href="index.html" class="logo-link">
+                    <!-- ВСТАВИТЬ ЛОГОТИП: logo.png -->
+                </a>
+            </div>
+            
+            <nav class="about-nav-centered">
+                <a href="catalog.html" class="nav-link">CATALOG</a>
+                <a href="blog.html" class="nav-link">BLOG</a>
+                <a href="about.html" class="nav-link active">ABOUT</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Основной контент about -->
+    <main class="about-main-content">
+        <div class="container">
+            <h1 class="about-page-title">WHERE IT ALL BEGAN</h1>
+            
+            <div class="about-story-section">
+                <div class="about-story-image">
+                    <!-- ВСТАВИТЬ ИЗОБРАЖЕНИЕ: workshop-hands.jpg -->
+                    <!-- Описание: люди в гончарной мастерской за работой -->
+                </div>
+                <div class="about-story-text">
+                    <p>
+                        Our small pottery workshop began as a simple passion project, rooted in a love for handmade artistry and traditional craftsmanship. What started with a single wheel and a few lumps of clay has grown into a cozy creative space where ideas take shape and stories are told through every piece. Inspired by timeless techniques and the beauty of natural materials, we've built a place where both beginners and experienced artists can come together, share their skills, and celebrate the art of pottery. Each creation reflects our journey—shaped by hand, fired with care, and made to be cherished.
+                    </p>
+                    
+                    <p>
+                        Over the years, our workshop has become more than just a place to create—it's a community. Friends, families, and curious visitors gather here to learn, connect, and experience the joy of working with clay. From intimate masterclasses to collaborative projects, we believe in the power of handmade art to bring people together and spark creativity in unexpected ways.
+                    </p>
+                    
+                    <p>
+                        Every piece that leaves our studio carries a bit of our story, blending tradition with personal expression. Whether it's a simple cup or an intricate vase, our ceramics are crafted to be both beautiful and functional, adding warmth and authenticity to any space.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Секция GET IN TOUCH (из index.html) -->
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-title">GET IN TOUCH</h2>
+            <div class="contact-content">
+                <div class="contact-image">
+                    <!-- ВСТАВИТЬ ИЗОБРАЖЕНИЕ: contact-tea-set.jpg -->
+                    <!-- Описание: чайный набор на темном фоне, бирюзовый чайник, чашки, лайм -->
+                </div>
+
+                <div class="contact-form">
+                    <form>
+                        <!-- Name + Email в одной строке -->
+                        <div class="form-row">
+                            <input type="text" placeholder="Name" class="form-input">
+                            <input type="email" placeholder="Email" class="form-input">
+                        </div>
+
+                        <textarea placeholder="Question" class="form-textarea"></textarea>
+
+                        <div class="checkbox-container">
+                            <input type="checkbox" id="terms" class="form-checkbox">
+                            <label for="terms">I agree with the <a href="#" class="terms-link">terms</a>.</label>
+                        </div>
+
+                        <button type="submit" class="submit-btn">SEND REQUEST</button>
+                    </form>
+
+                    <div class="form-icon"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция FIND US -->
+    <section class="find-us-section">
+        <div class="container">
+            <h2 class="section-title">FIND US</h2>
+            <div class="map-placeholder">
+                <!-- Здесь будет карта -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Newsletter -->
+            <div class="footer-column newsletter">
+                <h3>NEWSLETTER</h3>
+                <p>Keep up to date with news and promotions</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your e-mail" class="newsletter-input">
+                    <div class="newsletter-checkbox">
+                        <input type="checkbox" id="newsletter-terms">
+                        <label for="newsletter-terms">I agree with the <a href="#" class="terms-link">terms</a></label>
+                    </div>
+                    <button type="submit" class="newsletter-btn">SUBMIT</button>
+                </form>
+            </div>
+
+            <!-- Discover -->
+            <div class="footer-column">
+                <h3>DISCOVER</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- Shopping -->
+            <div class="footer-column">
+                <h3>SHOPPING</h3>
+                <ul>
+                    <li><a href="catalog.html">Catalog</a></li>
+                </ul>
+            </div>
+
+            <!-- Information -->
+            <div class="footer-column">
+                <h3>INFORMATION</h3>
+                <ul>
+                    <li><a href="#">Terms and Conditions</a></li>
+                </ul>
+            </div>
+
+            <!-- Socials -->
+            <div class="footer-column socials">
+                <h3>FOLLOW US</h3>
+                <div class="social-icons">
+                    <a href="#"><img src="images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="images/instagram.png" alt="Instagram"></a>
+                    <a href="#"><img src="images/pinterest.png" alt="Pinterest"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© Copyright 2025, Ceramic Soul</p>
+        </div>
+    </footer>
+</body>
+</html>
+
