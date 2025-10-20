@@ -146,6 +146,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     showImage(0);
 
+    initFormValidation();
+
     const currentPage = window.location.pathname;
     
     if (currentPage.includes('catalog.html')) {
@@ -154,3 +156,206 @@ document.addEventListener('DOMContentLoaded', function() {
         initBlog();
     }
 });
+
+function validateEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function validateName(name) {
+    return name.trim().length >= 2;
+}
+
+function validateQuestion(question) {
+    return question.trim().length >= 10;
+}
+
+function showFieldError(field, message) {
+    field.classList.add('error');
+    field.classList.remove('success');
+    
+    const existingError = field.parentNode.querySelector('.form-error');
+    if (existingError) {
+        existingError.remove();
+    }
+    
+    const errorDiv = document.createElement('div');
+    errorDiv.className = 'form-error';
+    errorDiv.textContent = message;
+    field.parentNode.insertBefore(errorDiv, field.nextSibling);
+}
+
+function showFieldSuccess(field) {
+    field.classList.add('success');
+    field.classList.remove('error');
+    
+    const existingError = field.parentNode.querySelector('.form-error');
+    if (existingError) {
+        existingError.remove();
+    }
+}
+
+function clearFieldValidation(field) {
+    field.classList.remove('error', 'success');
+    const existingError = field.parentNode.querySelector('.form-error');
+    if (existingError) {
+        existingError.remove();
+    }
+}
+
+function initFormValidation() {
+    const contactForms = document.querySelectorAll('.contact-form form');
+    contactForms.forEach(form => {
+        const nameInput = form.querySelector('input[type="text"]');
+        const emailInput = form.querySelector('input[type="email"]');
+        const questionTextarea = form.querySelector('textarea');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        if (nameInput) {
+            nameInput.addEventListener('blur', function() {
+                if (this.value.trim()) {
+                    if (validateName(this.value)) {
+                        showFieldSuccess(this);
+                    } else {
+                        showFieldError(this, 'Name must be at least 2 characters long');
+                    }
+                } else {
+                    clearFieldValidation(this);
+                }
+            });
+            
+            nameInput.addEventListener('input', function() {
+                if (this.classList.contains('error') && validateName(this.value)) {
+                    showFieldSuccess(this);
+                }
+            });
+        }
+        
+        if (emailInput) {
+            emailInput.addEventListener('blur', function() {
+                if (this.value.trim()) {
+                    if (validateEmail(this.value)) {
+                        showFieldSuccess(this);
+                    } else {
+                        showFieldError(this, 'Please enter a valid email address');
+                    }
+                } else {
+                    clearFieldValidation(this);
+                }
+            });
+            
+            emailInput.addEventListener('input', function() {
+                if (this.classList.contains('error') && validateEmail(this.value)) {
+                    showFieldSuccess(this);
+                }
+            });
+        }
+        
+        if (questionTextarea) {
+            questionTextarea.addEventListener('blur', function() {
+                if (this.value.trim()) {
+                    if (validateQuestion(this.value)) {
+                        showFieldSuccess(this);
+                    } else {
+                        showFieldError(this, 'Question must be at least 10 characters long');
+                    }
+                } else {
+                    clearFieldValidation(this);
+                }
+            });
+            
+            questionTextarea.addEventListener('input', function() {
+                if (this.classList.contains('error') && validateQuestion(this.value)) {
+                    showFieldSuccess(this);
+                }
+            });
+        }
+        
+        if (submitBtn) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                let isValid = true;
+                
+                if (nameInput && !validateName(nameInput.value)) {
+                    showFieldError(nameInput, 'Name must be at least 2 characters long');
+                    isValid = false;
+                }
+                
+                if (emailInput && !validateEmail(emailInput.value)) {
+                    showFieldError(emailInput, 'Please enter a valid email address');
+                    isValid = false;
+                }
+                
+                if (questionTextarea && !validateQuestion(questionTextarea.value)) {
+                    showFieldError(questionTextarea, 'Question must be at least 10 characters long');
+                    isValid = false;
+                }
+                
+                if (isValid) {
+                    submitBtn.disabled = true;
+                    submitBtn.textContent = 'SENDING...';
+                    
+                    setTimeout(() => {
+                        alert('Form submitted successfully!');
+                        form.reset();
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'SEND REQUEST';
+                        
+                        [nameInput, emailInput, questionTextarea].forEach(field => {
+                            if (field) clearFieldValidation(field);
+                        });
+                    }, 2000);
+                }
+            });
+        }
+    });
+    
+    const newsletterForms = document.querySelectorAll('.newsletter-form');
+    newsletterForms.forEach(form => {
+        const emailInput = form.querySelector('input[type="email"]');
+        const submitBtn = form.querySelector('button[type="submit"]');
+        
+        if (emailInput) {
+            emailInput.addEventListener('blur', function() {
+                if (this.value.trim()) {
+                    if (validateEmail(this.value)) {
+                        showFieldSuccess(this);
+                    } else {
+                        showFieldError(this, 'Please enter a valid email address');
+                    }
+                } else {
+                    clearFieldValidation(this);
+                }
+            });
+            
+            emailInput.addEventListener('input', function() {
+                if (this.classList.contains('error') && validateEmail(this.value)) {
+                    showFieldSuccess(this);
+                }
+            });
+        }
+        
+        if (submitBtn) {
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                if (!validateEmail(emailInput.value)) {
+                    showFieldError(emailInput, 'Please enter a valid email address');
+                    return;
+                }
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'SUBSCRIBING...';
+                
+                setTimeout(() => {
+                    alert('Successfully subscribed to newsletter!');
+                    form.reset();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'SUBMIT';
+                    clearFieldValidation(emailInput);
+                }, 2000);
+            });
+        }
+    });
+}
