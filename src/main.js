@@ -30,17 +30,40 @@ async function fetchPosts() {
 function getImagePath(imagePath) {
     if (!imagePath) return '';
     
-    const basePath = window.location.pathname.includes('/itmo_web_lab3/') ? '/itmo_web_lab3/' : '/';
+    const imageMap = {
+        '/images/terracotta.jpg': '/assets/terracotta-Cp_Fiquy.jpg',
+        '/images/clay-bloom.jpg': '/assets/clay-bloom-CoIudm2A.jpg',
+        '/images/moss-moon.jpg': '/assets/moss-moon-gBlYZMI6.jpg',
+        '/images/earthen-grace.jpg': '/assets/earthen-grace-93zm5t6m.jpg',
+        '/images/solace-set.jpg': '/assets/solace-set-93zm5t6m.jpg',
+        '/images/pottery-secrets.jpg': '/assets/pottery-secrets-93zm5t6m.jpg',
+        '/images/best-materials.jpg': '/assets/best-materials-93zm5t6m.jpg',
+        '/images/ceramic-vase.png': '/assets/ceramic-vase-OXX2WIyD.png',
+        '/images/crafts.jpg': '/assets/crafts-DEWsSkwQ.jpg',
+        '/images/potter.jpg': '/assets/potter-BfefSK05.jpg',
+        '/images/store.jpg': '/assets/store-95IpNxmP.jpg',
+        '/images/workshop-hands.jpg': '/assets/workshop-hands-BWI96lKG.jpg',
+        '/images/vase.png': '/assets/vase-3Pe10w9V.png'
+    };
     
+    // Определяем базовый путь для GitHub Pages
+    const basePath = window.location.pathname.includes('/ITMO_WEB_lab3/') ? '/ITMO_WEB_lab3' : '';
+    
+    // Если есть маппинг, используем его
+    if (imageMap[imagePath]) {
+        return basePath + imageMap[imagePath];
+    }
+    
+    // Иначе обрабатываем как обычно
     if (imagePath.startsWith('/')) {
-        return basePath + imagePath.substring(1);
+        return basePath + imagePath;
     }
     
     if (imagePath.startsWith('./')) {
-        return basePath + imagePath.substring(2);
+        return basePath + '/' + imagePath.substring(2);
     }
     
-    return basePath + imagePath;
+    return basePath + '/' + imagePath;
 }
 
 function renderProducts(products) {
