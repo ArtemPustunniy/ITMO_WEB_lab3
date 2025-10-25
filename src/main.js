@@ -27,13 +27,29 @@ async function fetchPosts() {
     }
 }
 
+function getImagePath(imagePath) {
+    if (!imagePath) return '';
+    
+    const basePath = window.location.pathname.includes('/itmo_web_lab3/') ? '/itmo_web_lab3/' : '/';
+    
+    if (imagePath.startsWith('/')) {
+        return basePath + imagePath.substring(1);
+    }
+    
+    if (imagePath.startsWith('./')) {
+        return basePath + imagePath.substring(2);
+    }
+    
+    return basePath + imagePath;
+}
+
 function renderProducts(products) {
     const productsGrid = document.querySelector('.catalog-products-grid');
     if (!productsGrid) return;
 
     productsGrid.innerHTML = products.map(product => `
         <div class="catalog-product-card">
-            <div class="catalog-product-image" style="background-image: url('${product.image}')"></div>
+            <div class="catalog-product-image" style="background-image: url('${getImagePath(product.image)}')"></div>
             <div class="catalog-product-info">
                 <h3 class="catalog-product-name">${product.title}</h3>
                 <p class="catalog-product-price">${product.price} ${product.currency}</p>
@@ -49,7 +65,7 @@ function renderPosts(posts) {
     postsGrid.innerHTML = posts.map(post => `
         <div class="blog-post-card">
             <div class="blog-post-top">
-                <div class="blog-post-image" style="background-image: url('${post.image}')"></div>
+                <div class="blog-post-image" style="background-image: url('${getImagePath(post.image)}')"></div>
                 <div class="blog-post-content">
                     <h3 class="blog-post-title">${post.title}</h3>
                     <button class="blog-read-btn">Read More</button>
