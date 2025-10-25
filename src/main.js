@@ -35,7 +35,7 @@ function getImagePath(imagePath) {
         '/images/clay-bloom.jpg': '/assets/clay-bloom-CoIudm2A.jpg',
         '/images/moss-moon.jpg': '/assets/moss-moon-gBlYZMI6.jpg',
         '/images/earthen-grace.jpg': '/assets/earthen-grace-93zm5t6m.jpg',
-        '/images/solace-set.jpg': '/assets/solace-set-93zm5t6m.jpg',
+        '/images/solace-set.jpg': '/assets/terracotta-Cp_Fiquy.jpg',
         '/images/pottery-secrets.jpg': '/assets/pottery-secrets-93zm5t6m.jpg',
         '/images/best-materials.jpg': '/assets/best-materials-93zm5t6m.jpg',
         '/images/ceramic-vase.png': '/assets/ceramic-vase-OXX2WIyD.png',
